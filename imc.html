@@ -14,12 +14,20 @@
        let imc = peso / (altura * altura);
        return imc;
     }
+    let peso =  prompt("informe seu peso");
+    let altura =  prompt("informe sua altura");
 
     
-    let imcDamy = calculaImc(59, 1.67);
+    let imc = calculaImc(peso, altura);
 
-    mostrar(`o valor do imc é ${imcDamy}`)
+    mostrar(`o valor do imc é ${imc}`);
 
-
+    if (imc < 18.5) {
+        mostra("seu imc está abaixo do esperado" );
+    }else if (imc >= 18.5 && imc <= 35) {
+        mostra("seu imc está saudavel" );
+    }else if (imc > 35) {
+        mostra("seu imc está acima do esperado" );
+    }
 
 </script>

@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+    document.write("<br><hr><br>");
+}
+
+function mostra(frase) {
+    document.write(`<big>${frase}</big>`);
+    pulaLinha();
+}
+// o prompt só retorna texto.
+let empate = parseInt(prompt('insira o numero de empates'));
+let vitoria = parseInt(prompt('insira o numero de vitorias'));
+
+let total = vitoria * 3 + empate;
+
+if (total < 28) {
+    mostra('seu time está pior que o ano passado')
+}else {
+    mostra('seu time está melhor que o ano passado')
+}
+
+mostra(total);
+
+</script>
