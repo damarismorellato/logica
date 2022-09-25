@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<p>Insira um número</p>
+
+<input type="number">
+
+<button onclick="verifica()">Comparar</button>
+
+<!-- <input type="reset"  value="Limpar" onclick="limpar()" id="botao-limpar"> -->
+
+<script>
+    var numeroPensado = Math.round(Math.random() * 10);
+
+    var numeroInserido = document.querySelector("input");
+
+    numeroInserido.focus();
+
+    console.log(numeroPensado);
+    function verifica() {
+
+
+        if (numeroInserido.value == numeroPensado) {
+
+            alert("Você acertou!")
+        } else {
+
+            alert("Você errou!!")
+        }
+
+        numeroInserido.value = "";
+        numeroInserido.focus();
+    }
+
+    var botao = document.querySelector("button");
+
+    /* function limpar() {
+        document.querySelector("input").value = "";
+    } */
+
+
+</script>

@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<p>Insira um número</p>
+
+<input type="number">
+
+<button onclick="verifica()">Comparar</button>
+
+<!-- <input type="reset"  value="Limpar" onclick="limpar()" id="botao-limpar"> -->
+
+<script>
+
+
+    var numeroInserido = document.querySelector("input");
+    numeroInserido.focus();
+
+    let numeros = [3, 2, 1, 6];
+
+    function verifica() {
+
+        let achou = false;
+
+        for (let posicao = 0; posicao < numeros.length; posicao++) {
+
+            if (numeroInserido.value == numeros[posicao]) {
+
+                alert("Você acertou!")
+                achou = true;
+                break;
+            }
+        }
+        if (achou == false) {
+            alert("você errou!")
+        }
+        numeroInserido.value = "";
+        numeroInserido.focus();
+    }
+
+    var botao = document.querySelector("button");
+
+    /* function limpar() {
+        document.querySelector("input").value = "";
+    } */
+
+
+</script>

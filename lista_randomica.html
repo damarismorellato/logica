@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+
+<p>Insira um número</p>
+
+<input type="number">
+
+<button onclick="verifica()">Comparar</button>
+
+
+<script>
+    function sorteia() {
+        return Math.round(Math.random() * 10)
+    }
+
+    function listaAleatoria(quantidade) {
+
+        var lista = [];
+
+        var numero = 1;
+
+        while (numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+            if (numeroAleatorio !== 0) {
+                for (var i = 0; i < lista.length; i++) {
+
+                    if (lista[i] == numeroAleatorio) {
+
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if (achou == false) {
+                    lista.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+        }
+        return lista;
+
+    }
+
+    let numeros = listaAleatoria(5);
+    console.log(numeros);
+
+    var numeroInserido = document.querySelector("input");
+    numeroInserido.focus();
+
+
+    function verifica() {
+
+        let achou = false;
+
+        for (let posicao = 0; posicao < numeros.length; posicao++) {
+
+            if (numeroInserido.value == numeros[posicao]) {
+
+                alert("Você acertou!")
+                achou = true;
+                break;
+            }
+        }
+        if (achou == false) {
+            alert("você errou!")
+        }
+        numeroInserido.value = "";
+        numeroInserido.focus();
+    }
+
+    var botao = document.querySelector("button");
+
+
+
+
+</script>
